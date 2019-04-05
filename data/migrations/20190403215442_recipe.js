@@ -6,8 +6,8 @@ exports.up = function(knex) {
     tbl.string('name',128)
        .notNullable()
        .unique();
-
-    
+       tbl.integer('dish_id').references('id').inTable('dish');
+       tbl.integer('ingredient_id').references('id').inTable('ingredient');
   })
 };
 exports.down = function(knex) {
